@@ -1,0 +1,793 @@
+/* ============================================================
+   COPACETIC CO. — THE GREEN ROOM
+   Design system: deep green / cream / gold
+   ============================================================ */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --green:  #071d14;   /* primary deep green */
+  --green2: #0b2b1d;   /* lighter green */
+  --cream:  #f1eadb;   /* cream background */
+  --gold:   #c9a665;   /* accent gold */
+  --black:  #050706;   /* near-black */
+  --muted:  #a9ad9f;   /* muted text */
+}
+
+/* ---------- 2. Base / reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- 3. Navigation ---------- */
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid #ffffff24;
+}
+
+.brand {
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gold);
+  color: #07130d;
+  padding: 16px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn.small {
+  padding: 11px 17px;
+  font-size: 12px;
+}
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  min-height: 94vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 130px 6vw 70px;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(3,10,7,.95) 0%, rgba(3,10,7,.72) 42%, rgba(3,10,7,.15) 76%),
+    linear-gradient(0deg, rgba(3,10,7,.65), transparent 45%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ---------- 6. Shared heading styles ---------- */
+.hero h1,
+.section-head h2,
+.intro h2,
+.story h2,
+.booking h2,
+.contact h2 {
+  font-family: 'Bebas Neue';
+  font-weight: 400;
+  line-height: .9;
+  margin: 18px 0;
+  font-size: clamp(60px, 9vw, 130px);
+  letter-spacing: 1px;
+}
+
+.hero h1 em,
+.section-head em,
+.intro em,
+.story em,
+.booking em {
+  font-family: 'Playfair Display';
+  font-weight: 600;
+  text-transform: none;
+  color: var(--gold);
+}
+
+.lede {
+  max-width: 570px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #e4e2d9;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 34px;
+}
+
+.textlink {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-mark {
+  position: absolute;
+  right: 5vw;
+  bottom: 4vw;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #c9a66580;
+}
+
+.hero-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- 7. Ticker strip ---------- */
+.ticker {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 18px 4vw;
+  background: var(--gold);
+  color: #0a160f;
+  font-family: 'Bebas Neue';
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---------- 8. Intro section ---------- */
+.intro,
+.story,
+.booking,
+.contact {
+  padding: 110px 7vw;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: var(--cream);
+  color: #102016;
+}
+
+.intro h2,
+.contact h2 {
+  font-size: clamp(48px, 6vw, 90px);
+}
+
+.intro > div p {
+  font-family: 'Playfair Display';
+  font-size: 24px;
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+/* ---------- 9. Services menu ---------- */
+.services,
+.work {
+  padding: 110px 7vw;
+  background: var(--green);
+}
+
+.section-head h2 {
+  font-size: clamp(50px, 6vw, 90px);
+}
+
+.service-grid {
+  border-top: 1px solid #c9a66555;
+}
+
+.service-grid article {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  gap: 30px;
+  padding: 28px 0;
+  border-bottom: 1px solid #c9a66540;
+  align-items: center;
+}
+
+.service-grid h3 {
+  font-family: 'Playfair Display';
+  font-size: 25px;
+  margin: 0 0 8px;
+}
+
+.service-grid p {
+  margin: 0;
+  color: #bfc5ba;
+  line-height: 1.5;
+  max-width: 680px;
+}
+
+.service-grid b {
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+  color: var(--gold);
+}
+
+.service-grid span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* ---------- 9b. Featured service (The Full Copacetic) ---------- */
+.service-grid .featured {
+  position: relative;
+  background: linear-gradient(135deg, var(--gold) 0%, #d9b877 100%);
+  color: #122018;
+  padding: 34px 30px;
+  margin-top: 30px;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #0a160f, 0 10px 30px rgba(201, 166, 101, .25);
+  transform: scale(1.02);
+}
+
+.service-grid .featured::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  background: var(--black);
+  color: var(--gold);
+  font-family: 'Bebas Neue';
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--gold);
+  z-index: 2;
+}
+
+.service-grid .featured p {
+  color: #2a1d0a;
+}
+
+.service-grid .featured h3 {
+  font-size: 28px;
+}
+
+.service-grid .featured b {
+  font-size: 38px;
+  color: #0a160f;
+}
+
+/* ---------- 10. Gallery / work ---------- */
+.work {
+  background: #090d0b;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr .7fr 1.3fr;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+.gallery img:nth-child(2),
+.gallery img:nth-child(3) {
+  height: 360px;
+  margin-top: 70px;
+}
+
+/* ---------- 11. Stats ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--gold);
+  color: #0c1711;
+}
+
+.stats div {
+  padding: 55px;
+  text-align: center;
+  border-right: 1px solid #0c171133;
+}
+
+.stats strong {
+  display: block;
+  font-family: 'Bebas Neue';
+  font-size: 65px;
+}
+
+.stats span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* ---------- 12. Story ---------- */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+  background: var(--green);
+}
+
+.story-image img {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+}
+
+.story h2 {
+  font-size: clamp(50px, 6vw, 90px);
+}
+
+.story-copy > p:not(.eyebrow):not(.quote) {
+  color: #c1c7bc;
+  line-height: 1.8;
+}
+
+.quote {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-size: 28px;
+  color: var(--gold);
+  margin-top: 35px;
+}
+
+/* ---------- 13. Booking form ---------- */
+.booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  background: var(--cream);
+  color: #102016;
+}
+
+.booking h2 {
+  font-size: clamp(50px, 6vw, 90px);
+}
+
+.policy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #fff;
+  padding: 32px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.service-options {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.service-options legend {
+  margin-bottom: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.service-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #ccd0c8;
+  background: #faf8f2;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.service-option input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #8a9488;
+  background: #fff;
+  accent-color: #315b3d;
+}
+
+.service-option input[type="radio"] {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+
+.service-option input[type="radio"]::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #315b3d;
+  content: "";
+  transform: scale(0);
+  transition: transform 120ms ease-in-out;
+}
+
+.service-option input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.service-option input[type="checkbox"] {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  border-radius: 4px;
+}
+
+.service-option input[type="checkbox"]::before {
+  width: 9px;
+  height: 5px;
+  border: solid #fff;
+  border-width: 0 0 2px 2px;
+  content: "";
+  transform: rotate(-45deg) scale(0);
+}
+
+.service-option input[type="checkbox"]:checked {
+  border-color: #315b3d;
+  background: #315b3d;
+}
+
+.service-option input[type="checkbox"]:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.service-option:has(input:checked) {
+  border-color: #315b3d;
+  background: #eef3eb;
+}
+
+.add-on-options:disabled {
+  opacity: 0.55;
+}
+
+.service-option input:focus-visible {
+  outline: 3px solid #c9a665;
+  outline-offset: 2px;
+}
+
+.service-option span {
+  display: grid;
+  gap: 3px;
+}
+
+.service-option small {
+  color: #536257;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  font-size: 15px;
+  padding: 14px;
+  border: 1px solid #ccd0c8;
+  background: #faf8f2;
+  color: #132016;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.availability-message {
+  margin: -8px 0 0;
+  color: #536257;
+  font-size: 13px;
+}
+
+form small {
+  color: #6b746c;
+  line-height: 1.5;
+}
+
+/* ---------- 14. Contact ---------- */
+.contact {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+  background: #07140e;
+}
+
+.contact > img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'Playfair Display';
+  font-size: 19px;
+  color: var(--gold);
+}
+
+/* ---------- 15. Footer ---------- */
+footer {
+  padding: 28px 5vw;
+  display: flex;
+  justify-content: space-between;
+  color: #7f897f;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.mobile-book {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVE — max-width 800px
+   ============================================================ */
+@media (max-width: 800px) {
+  .nav {
+    height: 68px;
+    padding: 0 20px;
+  }
+
+  .nav nav,
+  .nav > .btn {
+    display: none;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding: 110px 22px 55px;
+  }
+
+  .hero-media img {
+    object-position: 58% center;
+  }
+
+  .shade {
+    background:
+      linear-gradient(90deg, rgba(3,10,7,.92), rgba(3,10,7,.38)),
+      linear-gradient(0deg, rgba(3,10,7,.8), transparent 50%);
+  }
+
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  .hero-mark {
+    width: 82px;
+    height: 82px;
+    right: 18px;
+    bottom: 20px;
+  }
+
+  .lede {
+    font-size: 15px;
+    max-width: 82%;
+  }
+
+  .ticker {
+    justify-content: flex-start;
+  }
+
+  .intro,
+  .services,
+  .work,
+  .story,
+  .booking,
+  .contact {
+    padding: 75px 22px;
+  }
+
+  .intro,
+  .story,
+  .booking,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .intro > div p {
+    font-size: 19px;
+  }
+
+  .service-grid article {
+    grid-template-columns: 1fr 65px;
+    gap: 12px;
+  }
+
+  .service-grid article span {
+    grid-column: 1 / 3;
+  }
+
+  /* Featured box mobile fit */
+  .service-grid .featured {
+    transform: none;
+    padding: 28px 18px;
+    border-radius: 6px;
+  }
+
+  .service-grid .featured::before {
+    top: -12px;
+    left: 14px;
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery img,
+  .gallery img:nth-child(2),
+  .gallery img:nth-child(3) {
+    height: 260px;
+    margin: 0;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stats div {
+    padding: 30px;
+    border-right: 0;
+    border-bottom: 1px solid #0c171133;
+  }
+
+  .stats strong {
+    font-size: 50px;
+  }
+
+  .story-image img {
+    height: 470px;
+  }
+
+  .story-image {
+    order: 2;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .contact > img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-links {
+    font-size: 17px;
+  }
+
+  footer {
+    padding: 25px 20px 85px;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .mobile-book {
+    display: flex;
+    position: fixed;
+    z-index: 30;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: var(--gold);
+    color: #0a160f;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    box-shadow: 0 8px 30px #0008;
+  }
+}

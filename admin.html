@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071d14">
+<title>Copacetic Co. — Staff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ============ LOGIN GATE ============ -->
+<div id="loginScreen" class="admin-login">
+  <div class="login-card">
+    <img src="assets/logo.jpeg" alt="Copacetic Co. logo">
+    <h1>Staff <em>Login</em></h1>
+    <form id="loginForm">
+      <label>Email<input id="loginEmail" type="email" required placeholder="you@example.com"></label>
+      <label>Password<input id="loginPassword" type="password" required placeholder="••••••••"></label>
+      <button class="btn" type="submit">Sign In</button>
+      <p id="loginError" class="login-error"></p>
+    </form>
+    <a class="back-link" href="/">← Back to site</a>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashboard" class="admin-dash" hidden>
+  <header class="dash-header">
+    <div class="dash-brand">COPACETIC <span>CO.</span> <small>STAFF</small></div>
+    <div class="dash-actions">
+      <a class="btn small" href="/">View Site</a>
+      <button id="logoutBtn" class="btn small ghost">Log Out</button>
+    </div>
+  </header>
+
+  <div class="dash-layout">
+    <p id="dashboardError" class="dashboard-error" role="alert" hidden></p>
+    <!-- Today's schedule -->
+    <section class="dash-main">
+      <div class="section-head"><p class="eyebrow" id="todayLabel">TODAY</p><h2>Today's <em>Schedule</em></h2></div>
+      <div id="daySchedule" class="day-schedule">
+        <!-- time blocks render here -->
+      </div>
+    </section>
+
+    <!-- Week strip + side panel -->
+    <aside class="dash-side">
+      <div class="section-head"><p class="eyebrow">NEXT 7 DAYS</p><h3>This <em>Week</em></h3></div>
+      <div id="weekStrip" class="week-strip">
+        <!-- 7 day cards render here -->
+      </div>
+
+      <div class="stats-panel">
+        <div class="stat"><strong id="statToday">0</strong><span>Today</span></div>
+        <div class="stat"><strong id="statPending">0</strong><span>Pending</span></div>
+        <div class="stat"><strong id="statConfirmed">0</strong><span>Confirmed</span></div>
+      </div>
+
+      <div class="section-head"><p class="eyebrow">THE MENU</p><h3>Service <em>List</em></h3></div>
+      <div id="serviceList" class="service-list">
+        <!-- services render here -->
+      </div>
+
+      <!-- ============ BLACKOUT WINDOWS ============ -->
+      <div class="section-head"><p class="eyebrow">AVAILABILITY</p><h3>Block <em>Times</em></h3></div>
+      <p class="dash-note">Block any time range so it won't show as available for booking.</p>
+
+      <form id="blackoutForm" class="blackout-form">
+        <label>Date
+          <input id="blackoutDate" type="date" required>
+        </label>
+        <label>Start time <em>(e.g. 12:03)</em>
+          <input id="blackoutStart" type="text" placeholder="12:03" required>
+        </label>
+        <label>End time <em>(e.g. 13:57)</em>
+          <input id="blackoutEnd" type="text" placeholder="13:57" required>
+        </label>
+        <label>Reason <em>(optional)</em>
+          <input id="blackoutReason" type="text" placeholder="lunch, errands...">
+        </label>
+        <button class="btn small" type="submit">Block Time</button>
+      </form>
+
+      <div id="blackoutList" class="blackout-list">
+        <!-- blackouts render here -->
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js"></script>
+<script src="admin.js?v=202610240517"></script>
+</body>
+</html>

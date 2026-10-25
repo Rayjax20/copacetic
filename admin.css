@@ -1,0 +1,199 @@
+/* admin.css — Copacetic Co. staff dashboard */
+
+/* ---------- Layout ---------- */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #071d14;
+  color: #f1eadb;
+  font-family: 'DM Sans', sans-serif;
+}
+.admin-dash[hidden] { display: none; }
+
+.login-card {
+  background: #0d2b1e;
+  border: 1px solid #c9a665;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+.login-card img { width: 72px; height: 72px; border-radius: 50%; margin-bottom: 1rem; }
+.login-card h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #f1eadb;
+  margin: 0 0 1.5rem;
+}
+.login-card h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: #c9a665; }
+
+.login-card form { display: grid; gap: 1rem; text-align: left; }
+.login-card label { font-size: 0.8rem; color: #f1eadb; text-transform: uppercase; letter-spacing: 1px; }
+.login-card input {
+  width: 100%;
+  background: #0d2b1e;
+  border: 1px solid #3a5c40;
+  color: #f1eadb;
+  padding: 0.7rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+}
+.login-card input:focus { border-color: #c9a665; outline: none; }
+.login-card .btn { width: 100%; margin-top: 0.5rem; }
+
+.login-error { color: #e06c4f; font-size: 0.85rem; margin: 0.5rem 0 0; }
+.back-link { display: block; margin-top: 1.25rem; color: #c9a665; font-size: 0.85rem; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+/* ---------- Dashboard shell ---------- */
+.admin-dash {
+  min-height: 100vh;
+  background: #0d2b1e;
+  color: #f1eadb;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #3a5c40;
+  background: #071d14;
+}
+.dash-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #f1eadb;
+}
+.dash-brand span { color: #c9a665; }
+.dash-brand small { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: #8a9a7a; letter-spacing: 2px; margin-left: 0.5rem; }
+.dash-actions { display: flex; gap: 0.75rem; }
+
+.btn { background: #c9a665; color: #071d14; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-weight: 600; cursor: pointer; }
+.btn.small { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+.btn.ghost { background: transparent; color: #f1eadb; border: 1px solid #3a5c40; }
+
+.dash-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  padding: 2rem 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid #a04a3a;
+  border-radius: 6px;
+  background: #3a1a1a;
+  color: #f1eadb;
+}
+
+.dashboard-error[hidden] { display: none; }
+
+/* ---------- Section heads ---------- */
+.section-head .eyebrow {
+  font-size: 0.7rem;
+  color: #8a9a7a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.section-head h2, .section-head h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #f1eadb;
+  margin: 0.25rem 0 1rem;
+}
+.section-head h2 em, .section-head h3 em { font-family: 'Playfair Display', serif; font-style: italic; color: #c9a665; }
+
+/* ---------- Today's schedule (time blocks) ---------- */
+.day-schedule { display: grid; gap: 0.35rem; }
+
+.time-slot {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  background: #0d2b1e;
+  border: 1px solid #3a5c40;
+  border-radius: 6px;
+  min-height: 44px;
+}
+.slot-time { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: #8a9a7a; letter-spacing: 1px; }
+.slot-empty { color: #3a5c40; font-size: 1rem; justify-self: center; }
+
+.time-slot.has-booking { border-color: #c9a665; }
+.time-slot.has-booking.gold    { background: #1a2f14; border-color: #c9a665; }
+.time-slot.has-booking.green   { background: #163d26; border-color: #4d8a5c; }
+.time-slot.has-booking.muted   { background: #22261f; border-color: #5a5f55; }
+.time-slot.has-booking.red     { background: #3a1a1a; border-color: #a04a3a; }
+
+.booking-card { display: grid; gap: 0.15rem; padding-left: 0.5rem; }
+.booking-card strong { font-family: 'DM Sans', sans-serif; font-weight: 600; color: #f1eadb; font-size: 0.95rem; }
+.booking-card span { font-family: 'DM Sans', sans-serif; color: #c9a665; font-size: 0.8rem; }
+
+/* ---------- Week strip ---------- */
+.week-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem; }
+.week-day {
+  background: #0d2b1e;
+  border: 1px solid #3a5c40;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  text-align: center;
+  display: grid;
+  gap: 0.15rem;
+}
+.week-day strong { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: #c9a665; }
+.week-day span { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #f1eadb; }
+.week-day em { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; color: #8a9a7a; }
+
+/* ---------- Stats ---------- */
+.stats-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1.5rem; }
+.stat { background: #0d2b1e; border: 1px solid #3a5c40; border-radius: 6px; text-align: center; padding: 0.75rem 0; }
+.stat strong { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #f1eadb; display: block; }
+.stat span { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; color: #8a9a7a; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ---------- Service list ---------- */
+.service-list { display: grid; gap: 0.35rem; }
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d2b1e;
+  border: 1px solid #3a5c40;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+.service-item span { font-family: 'DM Sans', sans-serif; color: #f1eadb; font-size: 0.85rem; }
+.service-item strong { font-family: 'Bebas Neue', sans-serif; color: #c9a665; font-size: 1rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .dash-layout { grid-template-columns: 1fr; }
+  .week-strip { grid-template-columns: repeat(4, 1fr); }
+  .dash-header { flex-wrap: wrap; gap: 0.75rem; }
+}
+
+/* ---------- Booking action buttons ---------- */
+.booking-actions { display: flex; gap: 0.4rem; justify-content: flex-end; }
+.act-btn {
+  background: transparent;
+  color: #c9a665;
+  border: 1px solid #3a5c40;
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.act-btn:hover { background: #c9a665; color: #071d14; }
